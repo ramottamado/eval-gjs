@@ -10,7 +10,7 @@ As of GNOME 41, the dbus method `Eval()` is now restricted with `MetaContext:uns
 ## Installation
 
 ```sh
-git clone git://github.com/ramottamado.dev/eval-gjs.git
+git clone git://github.com/ramottamado/eval-gjs.git
 cd eval-gjs
 make install
 ```
