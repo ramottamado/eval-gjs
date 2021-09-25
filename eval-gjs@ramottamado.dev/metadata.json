@@ -1,0 +1,9 @@
+{
+  "name": "Eval GJS",
+  "description": "Evaluate GJS script through DBus",
+  "uuid": "eval-gjs@ramottamado.dev",
+  "shell-version": [
+    "41"
+  ],
+  "url": "https://github.com/ramottamado/eval-gjs"
+}
