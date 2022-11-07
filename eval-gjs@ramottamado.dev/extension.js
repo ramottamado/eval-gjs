@@ -40,6 +40,22 @@ class EvalGjs {
         this._dbusImpl = Gio.DBusExportedObject.wrapJSObject(EvalGjsIface, this);
     }
 
+
+    /**
+     * Eval:
+     * @param {string} code: A string containing JavaScript code
+     * @returns {Array}
+     *
+     * This function executes arbitrary code in the main
+     * loop, and returns a boolean success and
+     * JSON representation of the object as a string.
+     *
+     * If evaluation completes without throwing an exception,
+     * then the return value will be [true, JSON.stringify(result)].
+     * If evaluation fails, then the return value will be
+     * [false, JSON.stringify(exception)];
+     *
+     */
     Eval(code) {
         let returnValue;
         let success;
@@ -47,9 +63,9 @@ class EvalGjs {
         try {
             returnValue = JSON.stringify(eval(code));
 
-            returnValue = returnValue == undefined
-                ? ''
-                : returnValue;
+            // A hack; DBus doesn't have null/undefined
+            if (returnValue == undefined)
+                returnValue = '';
 
             success = true;
         }
