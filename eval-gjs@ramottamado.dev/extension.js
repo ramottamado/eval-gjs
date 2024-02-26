@@ -1,8 +1,3 @@
-import Gio from 'gi://Gio';
-import Meta from 'gi://Meta';
-import GLib from 'gi://GLib';
-import * as Main from 'resource:///org/gnome/shell/ui/main.js';
-
 /* extension.js
  *
  * This program is free software: you can redistribute it and/or modify
@@ -20,6 +15,11 @@ import * as Main from 'resource:///org/gnome/shell/ui/main.js';
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
+
+import Gio from 'gi://Gio';
+import Meta from 'gi://Meta';
+import GLib from 'gi://GLib';
+import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 
 const EvalGjsIface =
     '<node>' +
