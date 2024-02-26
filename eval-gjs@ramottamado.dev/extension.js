@@ -1,3 +1,8 @@
+import Gio from 'gi://Gio';
+import Meta from 'gi://Meta';
+import GLib from 'gi://GLib';
+import * as Main from 'resource:///org/gnome/shell/ui/main.js';
+
 /* extension.js
  *
  * This program is free software: you can redistribute it and/or modify
@@ -16,14 +21,6 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-/* exported init */
-
-'use strict';
-
-const { Gio, GLib, Meta } = imports.gi;
-
-const Main = imports.ui.main;
-
 const EvalGjsIface =
     '<node>' +
     '   <interface name="dev.ramottamado.EvalGjs">' +
@@ -35,7 +32,7 @@ const EvalGjsIface =
     '   </interface>' +
     '</node>';
 
-class EvalGjs {
+export default class EvalGjs {
     constructor() {
         this._dbusImpl = Gio.DBusExportedObject.wrapJSObject(EvalGjsIface, this);
     }
@@ -84,8 +81,4 @@ class EvalGjs {
     disable() {
         if (this._dbusImpl) this._dbusImpl.unexport();
     }
-}
-
-function init() {
-    return new EvalGjs();
 }
