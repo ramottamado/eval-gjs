@@ -3,7 +3,8 @@
   "description": "Evaluate GJS script through DBus",
   "uuid": "eval-gjs@ramottamado.dev",
   "shell-version": [
-    "45"
+    "45",
+    "46"
   ],
   "url": "https://github.com/ramottamado/eval-gjs"
 }
