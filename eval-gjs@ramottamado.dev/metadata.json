@@ -4,7 +4,8 @@
   "uuid": "eval-gjs@ramottamado.dev",
   "shell-version": [
     "45",
-    "46"
+    "46",
+    "47"
   ],
   "url": "https://github.com/ramottamado/eval-gjs"
 }
