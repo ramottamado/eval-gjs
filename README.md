@@ -1,14 +1,16 @@
-# POTENTIAL SECURITY BREACH
+> [!CAUTION]
+> # Potential security breach
+> This extension enables arbitrary code execution via `Eval()` dbus method. This means when you enable this extension, malicious apps, extensions or scripts can call the said dbus method and run malicious GJS codes on your machine.
 
-This extension enables arbitrary code execution via `Eval()` dbus method. This means when you enable this extension, malicious apps, extensions or scripts can call the said dbus method and run malicious GJS codes on your machine.
+> [!WARNING]
+> # Beware of impersonators
+> The extension at https://extensions.gnome.org/extension/5952/eval-gjs/ was not uploaded nor maintained by me. **Please refrain from installing this extension at all.**
 
-The extension at https://extensions.gnome.org/extension/5952/eval-gjs/ was not uploaded nor maintained by me. **Please refrain from installing this extension at all.**
+> [!TIP]
+> # Legacy version (GNOME 41-44)
+> For the legacy version (GNOME 41-44), check out the `legacy` branch first before installing.
 
-# Legacy Version (GNOME 41-44)
-
-For the legacy version, check out the `legacy` branch first before installing.
-
-# Eval GJS GNOME Shell Extension
+# Eval GJS GNOME Shell extension
 
 As of GNOME 41, the dbus method `Eval()` is now restricted with `MetaContext:unsafe-mode` property (see this [commit](https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/1970/diffs?commit_id=f42df5995e08a89495e2f59a9ed89b5c03369bf8)). This extension provides unrestricted `Eval()` dbus method for running arbitrary code in the compositor.
 
@@ -25,7 +27,7 @@ cd eval-gjs
 make install
 ```
 
-## Example Usage
+## Example usage
 
 ```sh
 gdbus call \
